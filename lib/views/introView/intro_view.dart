@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:freelancing_app/constants/my_colors.dart';
+import 'package:freelancing_app/resources/appurls/icons_urls.dart';
+import 'package:freelancing_app/resources/globalWidgets/button_widget.dart';
 import 'package:freelancing_app/resources/globalWidgets/text_widget.dart';
+import 'package:freelancing_app/resources/navigation/navigation_route.dart';
+import 'package:freelancing_app/views/introView/otp_verification_view.dart';
+
+import '../../resources/globalWidgets/text_field_widget.dart';
 
 class IntroView extends StatelessWidget {
-  const IntroView({super.key});
+  IntroView({super.key});
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class IntroView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/icons/logo.png",
+                      IconsUrls.iconURL,
                       width: 100,
                       height: 100,
                     ),
@@ -39,51 +45,23 @@ class IntroView extends StatelessWidget {
                     )
                   ],
                 ),
-                Positioned(
-                    bottom: 50,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 43,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.only(left: 15),
-                                fillColor: MyColors.whiteColor,
-                                filled: true,
-                                hintText: "আপনার নম্বর লিখুন...",
-                                hintStyle: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: MyColors.blackColor),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(24),
-                                    borderSide:
-                                        BorderSide(color: MyColors.whiteColor)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(24),
-                                    borderSide: BorderSide(
-                                        color: MyColors.whiteColor))),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: Container(
-                            width: double.infinity,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: MyColors.blackColor,
-                                borderRadius: BorderRadius.circular(8)),
-                            child: const Center(
-                                child: TextWidget(
-                              label: "সাবমিট",
-                            )),
-                          ),
-                        )
-                      ],
-                    ))
+                Column(
+                  children: [
+                    TextFieldWidget(
+                      controller: controller,
+                      hintText: "আপনার নম্বর লিখুন...",
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(navigatorRoute(OtpVerificationView()));
+                        },
+                        child: const ButtonWidget(name: "সাবমিট"))
+                  ],
+                )
               ],
             ),
           ),
