@@ -1,0 +1,3 @@
+class IconsUrls {
+  IconsUrls._();
+}
