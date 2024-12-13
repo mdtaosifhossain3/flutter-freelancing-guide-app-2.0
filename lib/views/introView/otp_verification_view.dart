@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:freelancing_app/resources/globalWidgets/button_widget.dart';
 import 'package:freelancing_app/resources/globalWidgets/text_field_widget.dart';
 import '../../resources/globalWidgets/text_widget.dart';
-import '../../resources/navigation/navigation_route.dart';
 
 class OtpVerificationView extends StatelessWidget {
   OtpVerificationView({super.key});
@@ -46,8 +45,7 @@ class OtpVerificationView extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(navigatorRoute(OtpVerificationView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=> OtpVerificationView()));
                         },
                         child: const ButtonWidget(name: "ভেরিফাই করুন"))
                   ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:freelancing_app/views/introView/intro_view.dart';
+import 'package:freelancing_app/views/homeView/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,11 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
-
         appBarTheme: const AppBarTheme(),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
-      home: IntroView(),
+      home: HomeView(),
     );
   }
 }

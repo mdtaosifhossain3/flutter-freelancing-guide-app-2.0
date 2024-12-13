@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:freelancing_app/resources/appurls/icons_urls.dart';
 import 'package:freelancing_app/resources/globalWidgets/button_widget.dart';
 import 'package:freelancing_app/resources/globalWidgets/text_widget.dart';
-import 'package:freelancing_app/resources/navigation/navigation_route.dart';
 import 'package:freelancing_app/views/introView/otp_verification_view.dart';
 
 import '../../resources/globalWidgets/text_field_widget.dart';
@@ -56,8 +55,7 @@ class IntroView extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(navigatorRoute(OtpVerificationView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=> OtpVerificationView()));
                         },
                         child: const ButtonWidget(name: "সাবমিট"))
                   ],
