@@ -13,6 +13,8 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.primaryBgColor,
+
       appBar: AppBar(title:TextWidget(
         label: "title",
 
@@ -22,6 +24,7 @@ class ArticleView extends StatelessWidget {
             style: {
           "body": Style(
             lineHeight: LineHeight.number(1.5),
+            color: MyColors.rawWhiteColor
           ),
           "h1": Style(
             color: MyColors.primaryColor,

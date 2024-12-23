@@ -4,24 +4,35 @@
 - Top Sites ------> Done
 - Reusable Colors ------> Done
 - Remove all the Colors Property and add Reusable Colors ------> Done
-- Tech Deep
-- English
-- How to apply
-- Secure
-- Account setup
-- Project Management
-- Time Management
-- Negotiation
-- Client
-- Portfolio
+- Tech Deep ------> Done
+- English ------> Done
+- How to apply ------> Done
+- Secure ------> Done
+- Account setup ------> Done
+- Project Management -----> Done
+- Time Management -----> Done
+- Negotiation -----> Done
+- Client -----> Done
+- Portfolio -----> Done
 
 Category
 - Learn Skills
 - Find Projects
 - Build Portfolio
 
+
+Logical Parts:
 BottomNavBar
 - Profile Settings
 - Notifications
 - Bookmarks
+- Skill
+
+
+Refactoring the Code
+Revision the code atleast 3 times
+
 Firebase Integration
+Revision
+
+Final Code
