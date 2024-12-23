@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1A1A22),
+      backgroundColor:MyColors.primaryBgColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -26,16 +26,16 @@ class HomeView extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFF4E54C8), Color(0xFF8F94FB)],
+                    gradient:  LinearGradient(
+                      colors: [MyColors.linearBgColor, MyColors.secondaryLinearBgColor],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                   ),
-                  child: const Row(
+                  child:  Row(
                     children: [
-                      CircleAvatar(backgroundImage:AssetImage('assets/icons/logo.png',) ,radius: 35,),
-                      SizedBox(width: 16.0),
+                      const  CircleAvatar(backgroundImage:AssetImage('assets/icons/logo.png',) ,radius: 35,),
+                      const  SizedBox(width: 16.0),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,13 +44,13 @@ class HomeView extends StatelessWidget {
                               label: "Welcome to Freelancing Guide",
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: MyColors.rawWhiteColor,
                             ),
-                            SizedBox(height: 8.0),
+                           const SizedBox(height: 8.0),
                             TextWidget(
                               label: "Empower your skills and start earning online.",
                               fontSize: 14,
-                              color: Colors.white70,
+                              color:MyColors.whiteColor,
                             ),
                           ],
                         ),
@@ -62,11 +62,11 @@ class HomeView extends StatelessWidget {
                 const SizedBox(height: 20.0),
 
                 // Categories Section
-                const TextWidget(
+                 TextWidget(
                   label: "Explore Categories",
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Colors.white,
+                  color:MyColors.rawWhiteColor,
                 ),
                 const SizedBox(height: 12.0),
                 const Row(
@@ -81,11 +81,11 @@ class HomeView extends StatelessWidget {
                 const SizedBox(height: 20.0),
 
                 // Trending Content Section
-                const TextWidget(
+                 TextWidget(
                   label: "Just for you",
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Colors.white,
+                  color: MyColors.rawWhiteColor,
                 ),
                 const SizedBox(height: 12.0),
                 ListView.builder(
@@ -97,7 +97,8 @@ class HomeView extends StatelessWidget {
                       title: data[index]["title"],
                       subtitle: data[index]["subtitle"],
                       imagePath: data[index]["leading"],
-                      widget:data[index]["widget"]
+                      widget:data[index]["widget"],
+                        article:data[index]["article"]
                     );
                   },
                 ),
@@ -109,7 +110,7 @@ class HomeView extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: MyColors.blackColor,
-        unselectedItemColor: Colors.grey.withOpacity(0.6),
+        unselectedItemColor:MyColors.greyColor.withOpacity(0.6),
         selectedItemColor: MyColors.secondaryColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,

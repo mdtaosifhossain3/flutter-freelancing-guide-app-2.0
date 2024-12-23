@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:freelancing_app/constants/my_colors.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -14,10 +15,13 @@ class CVGenerator extends StatefulWidget {
 
 class _CVGeneratorState extends State<CVGenerator> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController contactController = TextEditingController();
-  final TextEditingController educationController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController linkedinController = TextEditingController();
+  final TextEditingController objectiveController = TextEditingController();
   final TextEditingController experienceController = TextEditingController();
   final TextEditingController skillsController = TextEditingController();
+  final TextEditingController educationController = TextEditingController();
 
   File? profileImage;
 
@@ -39,44 +43,93 @@ class _CVGeneratorState extends State<CVGenerator> {
         build: (pw.Context context) {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
+            mainAxisAlignment: pw.MainAxisAlignment.start,
             children: [
-              // Profile Image
-              if (profileImage != null)
-                pw.Center(
-                  child: pw.Image(
-                    pw.MemoryImage(profileImage!.readAsBytesSync()),
-                    height: 100,
-                    width: 100,
+              // Header Section
+              pw.Row(
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                children: [
+                  // Left Side: Personal Info
+                  pw.Expanded(
+                    flex: 2,
+                    child: pw.Container(
+                      padding: const pw.EdgeInsets.all(8.0),
+                      child: pw.Column(
+                        crossAxisAlignment: pw.CrossAxisAlignment.start,
+                        children: [
+                          pw.Text(
+                            nameController.text,
+                            style: pw.TextStyle(
+                              fontSize: 18,
+                              fontWeight: pw.FontWeight.bold,
+                            ),
+                          ),
+                          pw.SizedBox(height: 8),
+                          pw.Text("Email: ${emailController.text}"),
+                          pw.Text("Phone: ${phoneController.text}"),
+                          if (linkedinController.text.isNotEmpty)
+                            pw.Text("LinkedIn: ${linkedinController.text}"),
+                        ],
+                      ),
+                    ),
                   ),
+                  // Right Side: Profile Picture
+                  pw.Expanded(
+                    flex: 1,
+                    child: pw.Container(
+                      alignment: pw.Alignment.center,
+                      child: profileImage != null
+                          ? pw.Image(
+                        pw.MemoryImage(profileImage!.readAsBytesSync()),
+                        height: 100,
+                        width: 100,
+                        fit: pw.BoxFit.cover,
+                      )
+                          : pw.Text("No Image"),
+                    ),
+                  ),
+                ],
+              ),
+              pw.SizedBox(height: 20),
+              // Career Objective
+              pw.Text(
+                "Career Objective",
+                style: pw.TextStyle(
+                  fontSize: 16,
+                  fontWeight: pw.FontWeight.bold,
                 ),
-              pw.SizedBox(height: 16),
-              // Name and Contact
-              pw.Text(
-                nameController.text,
-                style: pw.TextStyle(fontSize: 20, fontWeight: pw.FontWeight.bold),
               ),
-              pw.Text(contactController.text),
+              pw.Text(objectiveController.text),
               pw.SizedBox(height: 16),
-              // Education
+              // Work Experience
               pw.Text(
-                "Education",
-                style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold),
-              ),
-              pw.Text(educationController.text),
-              pw.SizedBox(height: 16),
-              // Experience
-              pw.Text(
-                "Experience",
-                style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold),
+                "Work Experience",
+                style: pw.TextStyle(
+                  fontSize: 16,
+                  fontWeight: pw.FontWeight.bold,
+                ),
               ),
               pw.Text(experienceController.text),
               pw.SizedBox(height: 16),
               // Skills
               pw.Text(
                 "Skills",
-                style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold),
+                style: pw.TextStyle(
+                  fontSize: 16,
+                  fontWeight: pw.FontWeight.bold,
+                ),
               ),
               pw.Text(skillsController.text),
+              pw.SizedBox(height: 16),
+              // Education
+              pw.Text(
+                "Education",
+                style: pw.TextStyle(
+                  fontSize: 16,
+                  fontWeight: pw.FontWeight.bold,
+                ),
+              ),
+              pw.Text(educationController.text),
             ],
           );
         },
@@ -91,10 +144,10 @@ class _CVGeneratorState extends State<CVGenerator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1A1A22),
+      backgroundColor: MyColors.primaryBgColor,
       appBar: AppBar(
         title: const Text("CV Generator"),
-        backgroundColor: const Color(0xff23262F),
+        backgroundColor:MyColors.secondaryBgColor,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -107,32 +160,32 @@ class _CVGeneratorState extends State<CVGenerator> {
                 onTap: pickImage,
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundColor: const Color(0xffB3C7C7),
+                  backgroundColor: MyColors.circleAvatarColor,
                   backgroundImage: profileImage != null ? FileImage(profileImage!) : null,
                   child: profileImage == null
-                      ? const Icon(Icons.add_a_photo, color: Colors.white)
+                      ?  Icon(Icons.add_a_photo, color: MyColors.whiteColor)
                       : null,
                 ),
               ),
             ),
             const SizedBox(height: 20),
-            // Name
-            _buildInputField("Name", nameController),
-            // Contact
-            _buildInputField("Contact Information", contactController),
-            // Education
-            _buildInputField("Education", educationController, maxLines: 3),
-            // Experience
-            _buildInputField("Experience", experienceController, maxLines: 3),
-            // Skills
-            _buildInputField("Skills", skillsController, maxLines: 2),
+            // Input Fields
+            _buildInputField("Name","Name" ,nameController,),
+            _buildInputField("Email","Email", emailController),
+            _buildInputField("Phone","Phone", phoneController),
+            _buildInputField("LinkedIn/GitHub/Website","LinkedIn/GitHub/Website", linkedinController),
+            _buildInputField("Career Objective","Career Objective", objectiveController, maxLines: 3),
+            _buildInputField("Title:\nBrief Description\nBullet Points,","Work Experience", experienceController, maxLines: 10),
+            _buildInputField("Enter Skills","Skills", skillsController, maxLines: 2),
+            _buildInputField(
+                "Department:\nUniversity:\nYear:\nSession:","Education", educationController, maxLines: 7),
             const SizedBox(height: 20),
             // Generate PDF Button
             Center(
               child: ElevatedButton(
                 onPressed: generatePDF,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff8F94FB),
+                  backgroundColor: MyColors.primaryColor,
                   padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 12.0),
                 ),
                 child: const Text("Generate CV PDF"),
@@ -144,21 +197,21 @@ class _CVGeneratorState extends State<CVGenerator> {
     );
   }
 
-  Widget _buildInputField(String label, TextEditingController controller, {int maxLines = 1}) {
+  Widget _buildInputField(String label,String heading, TextEditingController controller, {int maxLines = 1}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            label,
-            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            heading,
+            style:  TextStyle(color: MyColors.rawWhiteColor, fontSize: 16, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8.0),
           TextField(
             controller: controller,
             maxLines: maxLines,
-            style: const TextStyle(color: Colors.white),
+            style:  TextStyle(color: MyColors.rawWhiteColor),
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xff23262F),
@@ -166,8 +219,8 @@ class _CVGeneratorState extends State<CVGenerator> {
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide.none,
               ),
-              hintText: "Enter $label",
-              hintStyle: const TextStyle(color: Colors.grey),
+              hintText: label,
+              hintStyle:  TextStyle(color: MyColors.greyColor,height: 1.5),
             ),
           ),
         ],

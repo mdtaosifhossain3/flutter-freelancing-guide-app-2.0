@@ -14,7 +14,7 @@ class CategoryWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.27,
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
-        color: const Color(0xff23262F),
+        color: MyColors.secondaryBgColor,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Column(
@@ -25,7 +25,7 @@ class CategoryWidget extends StatelessWidget {
             label: title,
             fontSize: 14,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: MyColors.rawWhiteColor,
             textAlign: TextAlign.center,
           ),
         ],
