@@ -72,7 +72,7 @@ class HomeView extends StatelessWidget {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CategoryWidget(title: '"Learn Skills"', icon:  Icons.school,),
+                    CategoryWidget(title: "Learn Skills", icon:  Icons.school,),
                     CategoryWidget(title:"Find Projects", icon: Icons.work, ),
                     CategoryWidget(title:"Build Portfolio", icon: Icons.folder),
                   ],
@@ -114,15 +114,15 @@ class HomeView extends StatelessWidget {
         selectedItemColor: MyColors.secondaryColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        currentIndex: 0,
+        currentIndex:1,
         onTap: (index) {
           // Handle navigation
         },
         items: const [
-          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+
           BottomNavigationBarItem(label: "Bookmarks", icon: Icon(Icons.bookmark)),
-          BottomNavigationBarItem(label: "Profile", icon: Icon(Icons.notifications)),
-          BottomNavigationBarItem(label: "Profile", icon: Icon(Icons.person)),
+          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+          BottomNavigationBarItem(label: "Info", icon: Icon(Icons.notifications)),
         ],
       ),
     );

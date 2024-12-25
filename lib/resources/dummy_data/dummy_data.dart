@@ -3,17 +3,17 @@ import 'package:freelancing_app/views/articleView/article_view.dart';
 import 'package:freelancing_app/views/computerBasics/computer_basic.dart';
 import 'package:freelancing_app/views/skillTest/skill_test.dart';
 
+import '../../views/skillTest/start_the_test.dart';
 import '../appurls/icons_urls.dart';
 
-class DummyData{
-
-  List<Map<String,dynamic>> data =[
+class DummyData {
+  List<Map<String, dynamic>> data = [
     {
       "id": 1,
       "title": "Create a Winning CV",
       "subtitle": "Build a professional resume effortlessly",
       "color": 0xffc8e6c9,
-      "leading":"${IconsUrls.baseURl}cv.png",
+      "leading": "${IconsUrls.baseURl}cv.png",
       "widget": const CVGenerator()
     },
     {
@@ -22,8 +22,7 @@ class DummyData{
       "subtitle": "Test and improve your abilities",
       "color": 0xfffff9c4,
       "leading": "${IconsUrls.baseURl}skill.png",
-      "widget":const SkillAssessmentScreen()
-
+      "widget": SkillTest()
     },
     {
       "id": 3,
@@ -31,19 +30,20 @@ class DummyData{
       "subtitle": "Learn essential computer skills",
       "color": 0xffbbdefb,
       "leading": "${IconsUrls.baseURl}pc.png",
-      "widget":ComputerBasic(),
-
+      "widget": ComputerBasic(),
     },
     {
       "id": 4,
       "title": "Top Freelancing Sites",
       "subtitle": "Discover trusted platforms to start earning",
       "color": 0xffffccbc,
-      "leading":  "${IconsUrls.baseURl}site.png",
-      "widget":const ArticleView(article: {
-        "id": 1,
-        "card_title": "Top Freelancing Sites",
-        "data": """
+      "leading": "${IconsUrls.baseURl}site.png",
+      "widget": const ArticleView(
+
+        article: {
+          "id": 1,
+          "card_title": "Top Freelancing Sites",
+          "data": """
 <body>
 
 <h1>&#x2728; <b>বাংলাদেশে সেরা ফ্রিল্যান্সিং প্ল্যাটফর্মসমূহ</b> &#x2728;</h1>
@@ -107,7 +107,8 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 5,
@@ -115,10 +116,11 @@ class DummyData{
       "subtitle": "Master your computer or laptop",
       "color": 0xffe1bee7,
       "leading": "${IconsUrls.baseURl}setup.png",
-      "widget":const ArticleView(article: {
-        "id": 2,
-        "card_title": "Tech Deep Dive",
-        "data": """
+      "widget": const ArticleView(
+        article: {
+          "id": 2,
+          "card_title": "Tech Deep Dive",
+          "data": """
 <body>
 
 <h1>&#x2728; <b>ফ্রিল্যান্সিং শুরু করার জন্য ল্যাপটপ/পিসির ন্যূনতম সেটআপ</b> &#x2728;</h1>
@@ -200,18 +202,20 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 6,
       "title": "English Essentials",
       "subtitle": "Boost your communication skills",
       "color": 0xffffe0b2,
-      "leading":  "${IconsUrls.baseURl}eng.png",
-      "widget":const ArticleView(article: {
-        "id": 3,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}eng.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 3,
+          "card_title": "English Essentials",
+          "data": """
 <body>
 <h1>&#x1F4DA; <b>ফ্রিল্যান্সিংয়ে ইংরেজির গুরুত্ব এবং প্রয়োজনীয়তা</b> &#x1F4DA;</h1>
 
@@ -279,18 +283,20 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 7,
       "title": "How to Apply",
       "subtitle": "Learn the application process step-by-step",
       "color": 0xffc5cae9,
-      "leading":  "${IconsUrls.baseURl}apply.png",
-      "widget":const ArticleView(article: {
-        "id": 4,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}apply.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 4,
+          "card_title": "English Essentials",
+          "data": """
 <body>
 <h1>&#x1F4CC; <b>ফ্রিল্যান্সিংয়ে আবেদন করার পূর্ণাঙ্গ গাইড</b> &#x1F4CC;</h1>
 
@@ -356,7 +362,8 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 8,
@@ -364,10 +371,11 @@ class DummyData{
       "subtitle": "Understand how to get paid safely",
       "color": 0xffd1c4e9,
       "leading": "${IconsUrls.baseURl}verified.png",
-      "widget":const ArticleView(article: {
-        "id": 5,
-        "card_title": "English Essentials",
-        "data": """
+      "widget": const ArticleView(
+        article: {
+          "id": 5,
+          "card_title": "English Essentials",
+          "data": """
 <body>
 <h1>&#x1F4B0; <b>ফ্রিল্যান্সিংয়ে পেমেন্ট নিরাপদে গ্রহণ ও প্রেরণ করার উপায়</b> &#x1F4B0;</h1>
 
@@ -433,18 +441,20 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 9,
       "title": "Account Setup Guide",
       "subtitle": "Set up your profile for success",
       "color": 0xfffff59d,
-      "leading":  "${IconsUrls.baseURl}account.png",
-      "widget":const ArticleView(article: {
-        "id": 6,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}account.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 6,
+          "card_title": "English Essentials",
+          "data": """
 <body>
 <h1>&#x1F4B0; <b>ফ্রিল্যান্সিংয়ে নিরাপদে পেমেন্ট পাওয়ার উপায়</b> &#x1F4B0;</h1>
 
@@ -494,18 +504,20 @@ class DummyData{
 
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 10,
       "title": "Project Management",
       "subtitle": "Organize your freelance work effectively",
       "color": 0xffb3e5fc,
-      "leading":  "${IconsUrls.baseURl}project.png",
-      "widget":const ArticleView(article: {
-        "id": 7,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}project.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 7,
+          "card_title": "English Essentials",
+          "data": """
 
 <body>
     <article>
@@ -626,18 +638,20 @@ class DummyData{
     </article>
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 11,
       "title": "Time Management Tips",
       "subtitle": "Boost productivity with smart strategies",
       "color": 0xfff0f4c3,
-      "leading":  "${IconsUrls.baseURl}tasks.png",
-      "widget":const ArticleView(article: {
-        "id": 8,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}tasks.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 8,
+          "card_title": "English Essentials",
+          "data": """
         <body>
     <article>
         <h1>ফ্রিল্যান্সারদের জন্য টাইম ম্যানেজমেন্ট: একটি বিস্তারিত গাইড</h1>
@@ -739,7 +753,8 @@ class DummyData{
     </article>
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 12,
@@ -747,10 +762,11 @@ class DummyData{
       "subtitle": "Learn how to negotiate better deals",
       "color": 0xffffe082,
       "leading": "${IconsUrls.baseURl}negotiation.png",
-      "widget":const ArticleView(article: {
-        "id": 8,
-        "card_title": "English Essentials",
-        "data": """
+      "widget": const ArticleView(
+        article: {
+          "id": 8,
+          "card_title": "English Essentials",
+          "data": """
        <body>
     <article>
         <h1>ফ্রিল্যান্সারদের জন্য দরদাম ও চুক্তি আলোচনার দক্ষতা: একটি বিস্তারিত গাইড</h1>
@@ -859,18 +875,20 @@ class DummyData{
     </article>
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 13,
       "title": "Client Communication",
       "subtitle": "Handle client interactions like a pro",
       "color": 0xffd7ccc8,
-      "leading":  "${IconsUrls.baseURl}client.png",
-      "widget":const ArticleView(article: {
-        "id": 8,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}client.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 8,
+          "card_title": "English Essentials",
+          "data": """
       <body>
     <article>
         <h1>ফ্রিল্যান্সারদের জন্য ক্লায়েন্ট যোগাযোগ নির্দেশিকা: একটি বিস্তারিত গাইড</h1>
@@ -983,18 +1001,20 @@ class DummyData{
     </article>
 </body>
 """
-      },)
+        },
+      )
     },
     {
       "id": 14,
       "title": "Portfolio Building",
       "subtitle": "Showcase your work to attract clients",
       "color": 0xffc5e1a5,
-      "leading":  "${IconsUrls.baseURl}portfolio.png",
-      "widget":const ArticleView(article: {
-        "id": 8,
-        "card_title": "English Essentials",
-        "data": """
+      "leading": "${IconsUrls.baseURl}portfolio.png",
+      "widget": const ArticleView(
+        article: {
+          "id": 8,
+          "card_title": "English Essentials",
+          "data": """
     <body>
 <article>
 <h1>ফ্রিল্যান্সিং এ সফল হতে পোর্টফোলিও তৈরির সম্পূর্ণ গাইড</h1>
@@ -1129,7 +1149,8 @@ class DummyData{
 </article>
 </body>
 """
-      },)
+        },
+      )
     }
   ];
   List<Map<String, String>> computerBasicsCategories = [
@@ -1143,7 +1164,8 @@ class DummyData{
     },
     {
       "title": "Internet Basics",
-      "description": "Understanding browsers, search engines, and safe browsing."
+      "description":
+          "Understanding browsers, search engines, and safe browsing."
     },
     {
       "title": "Keyboard Shortcuts",
@@ -1163,7 +1185,8 @@ class DummyData{
     },
     {
       "title": "Word Processing",
-      "description": "Introduction to MS Word, Google Docs, and formatting basics."
+      "description":
+          "Introduction to MS Word, Google Docs, and formatting basics."
     },
     {
       "title": "Spreadsheets",
@@ -1179,14 +1202,15 @@ class DummyData{
     },
     {
       "title": "Cloud Storage and Backup",
-      "description": "Use tools like Google Drive, Dropbox, or OneDrive effectively."
+      "description":
+          "Use tools like Google Drive, Dropbox, or OneDrive effectively."
     },
     {
       "title": "Typing Skills",
       "description": "Improve your typing speed and accuracy."
     },
   ];
-  List<Map<String,dynamic>> buildPortfolio = [
+  List<Map<String, dynamic>> buildPortfolio = [
     {
       "name": "Personal Branding",
       "subcategories": [
@@ -1272,16 +1296,10 @@ class DummyData{
       ]
     }
   ];
-  List<Map<String,dynamic>> findProjects = [
+  List<Map<String, dynamic>> findProjects = [
     {
       "name": "Freelance Platforms",
-      "subcategories": [
-        "Upwork",
-        "Fiverr",
-        "Freelancer",
-        "Toptal",
-        "Guru"
-      ]
+      "subcategories": ["Upwork", "Fiverr", "Freelancer", "Toptal", "Guru"]
     },
     {
       "name": "Job Boards",
@@ -1341,12 +1359,7 @@ class DummyData{
     },
     {
       "name": "Project Directories & Marketplaces",
-      "subcategories": [
-        "Envato",
-        "ThemeForest",
-        "CodeCanyon",
-        "CreativeBloq"
-      ]
+      "subcategories": ["Envato", "ThemeForest", "CodeCanyon", "CreativeBloq"]
     },
     {
       "name": "Local Opportunities",
@@ -1358,15 +1371,10 @@ class DummyData{
     },
     {
       "name": "Hackathons & Competitions",
-      "subcategories": [
-        "Devpost",
-        "TopCoder",
-        "Kaggle",
-        "Hackerearth"
-      ]
+      "subcategories": ["Devpost", "TopCoder", "Kaggle", "Hackerearth"]
     }
   ];
-  List<Map<String,dynamic>> learnSkills = [
+  List<Map<String, dynamic>> learnSkills = [
     {
       "name": "Online Learning Platforms",
       "subcategories": [
@@ -1462,5 +1470,226 @@ class DummyData{
     }
   ];
 
-
+  List<Map<String, dynamic>> skillsCategories = [
+    {
+      "category": "Web Development",
+      "description": "Building and maintaining websites and web applications",
+      "currentDemandLevel": "Very High",
+      "subCategories": [
+        {
+          "name": "Frontend Development",
+          "inDemandSkills": [
+            "React",
+            "Vue.js",
+            "Next.js",
+            "Tailwind CSS",
+            "TypeScript"
+          ],
+          "upcomingSkills": ["Astro", "Svelte", "Web Components"],
+          "averageHourlyRate": "50-100"
+        },
+        {
+          "name": "Backend Development",
+          "inDemandSkills": [
+            "Node.js",
+            "Python/Django",
+            "Ruby on Rails",
+            "PHP/Laravel"
+          ],
+          "upcomingSkills": ["Rust", "Go", "Serverless Architecture"],
+          "averageHourlyRate": "60-120"
+        },
+        {
+          "name": "Full Stack Development",
+          "inDemandSkills": [
+            "MERN Stack",
+            "MEAN Stack",
+            "Laravel + Vue",
+            "Django + React"
+          ],
+          "upcomingSkills": ["Web3 Development", "Edge Computing"],
+          "averageHourlyRate": "70-150"
+        }
+      ]
+    },
+    {
+      "category": "Digital Marketing",
+      "description": "Promoting brands and products through digital channels",
+      "currentDemandLevel": "High",
+      "subCategories": [
+        {
+          "name": "SEO",
+          "inDemandSkills": [
+            "Technical SEO",
+            "Content Optimization",
+            "Local SEO",
+            "Mobile SEO"
+          ],
+          "upcomingSkills": ["AI-Powered SEO", "Voice Search Optimization"],
+          "averageHourlyRate": "40-100"
+        },
+        {
+          "name": "Social Media Marketing",
+          "inDemandSkills": [
+            "Content Strategy",
+            "Paid Advertising",
+            "Analytics",
+            "Community Management"
+          ],
+          "upcomingSkills": ["AR Marketing", "Social Commerce"],
+          "averageHourlyRate": "35-85"
+        },
+        {
+          "name": "Content Marketing",
+          "inDemandSkills": [
+            "Content Strategy",
+            "Copywriting",
+            "Email Marketing",
+            "Marketing Automation"
+          ],
+          "upcomingSkills": ["AI Content Generation", "Interactive Content"],
+          "averageHourlyRate": "45-120"
+        }
+      ]
+    },
+    {
+      "category": "Mobile Development",
+      "description": "Creating applications for mobile devices",
+      "currentDemandLevel": "Very High",
+      "subCategories": [
+        {
+          "name": "iOS Development",
+          "inDemandSkills": ["Swift", "SwiftUI", "Core Data", "ARKit"],
+          "upcomingSkills": ["Vision Pro Development", "visionOS"],
+          "averageHourlyRate": "60-150"
+        },
+        {
+          "name": "Android Development",
+          "inDemandSkills": [
+            "Kotlin",
+            "Jetpack Compose",
+            "Android SDK",
+            "Material Design"
+          ],
+          "upcomingSkills": ["Foldable Device Development", "Android Auto"],
+          "averageHourlyRate": "50-130"
+        },
+        {
+          "name": "Cross-Platform Development",
+          "inDemandSkills": ["React Native", "Flutter", "Xamarin"],
+          "upcomingSkills": ["Super Apps Development", "Mini Programs"],
+          "averageHourlyRate": "55-140"
+        }
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "description": "Developing AI-powered solutions and ML models",
+      "currentDemandLevel": "Very High",
+      "subCategories": [
+        {
+          "name": "Machine Learning",
+          "inDemandSkills": [
+            "TensorFlow",
+            "PyTorch",
+            "Scikit-learn",
+            "Computer Vision"
+          ],
+          "upcomingSkills": ["AutoML", "Edge AI", "Quantum ML"],
+          "averageHourlyRate": "80-200"
+        },
+        {
+          "name": "AI Development",
+          "inDemandSkills": [
+            "LLM Integration",
+            "NLP",
+            "ChatGPT API",
+            "AI Model Fine-tuning"
+          ],
+          "upcomingSkills": ["Multimodal AI", "AI Agents"],
+          "averageHourlyRate": "100-250"
+        }
+      ]
+    },
+    {
+      "category": "UI/UX Design",
+      "description": "Creating user interfaces and experiences",
+      "currentDemandLevel": "High",
+      "subCategories": [
+        {
+          "name": "UI Design",
+          "inDemandSkills": [
+            "Figma",
+            "Adobe XD",
+            "Design Systems",
+            "Responsive Design"
+          ],
+          "upcomingSkills": ["3D UI Design", "AR/VR Interfaces"],
+          "averageHourlyRate": "45-120"
+        },
+        {
+          "name": "UX Design",
+          "inDemandSkills": [
+            "User Research",
+            "Wireframing",
+            "Prototyping",
+            "Usability Testing"
+          ],
+          "upcomingSkills": ["Voice UI Design", "Gesture Interfaces"],
+          "averageHourlyRate": "50-130"
+        }
+      ]
+    },
+    {
+      "category": "Data Science",
+      "description": "Analyzing and interpreting complex data",
+      "currentDemandLevel": "High",
+      "subCategories": [
+        {
+          "name": "Data Analysis",
+          "inDemandSkills": ["Python", "R", "SQL", "Power BI", "Tableau"],
+          "upcomingSkills": ["Real-time Analytics", "Predictive Analytics"],
+          "averageHourlyRate": "50-150"
+        },
+        {
+          "name": "Data Engineering",
+          "inDemandSkills": [
+            "Apache Spark",
+            "Hadoop",
+            "ETL",
+            "Data Warehousing"
+          ],
+          "upcomingSkills": ["Data Mesh", "Data Fabric"],
+          "averageHourlyRate": "70-180"
+        }
+      ]
+    },
+    {
+      "category": "Cybersecurity",
+      "description": "Protecting systems and networks from threats",
+      "currentDemandLevel": "Very High",
+      "subCategories": [
+        {
+          "name": "Security Analysis",
+          "inDemandSkills": [
+            "Penetration Testing",
+            "Vulnerability Assessment",
+            "Security Auditing"
+          ],
+          "upcomingSkills": ["Zero Trust Security", "Quantum Cryptography"],
+          "averageHourlyRate": "70-200"
+        },
+        {
+          "name": "Cloud Security",
+          "inDemandSkills": [
+            "AWS Security",
+            "Azure Security",
+            "Cloud Infrastructure Protection"
+          ],
+          "upcomingSkills": ["DevSecOps", "Blockchain Security"],
+          "averageHourlyRate": "80-220"
+        }
+      ]
+    }
+  ];
 }

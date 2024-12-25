@@ -16,7 +16,7 @@ class ArticleView extends StatelessWidget {
       backgroundColor: MyColors.primaryBgColor,
 
       appBar: AppBar(title:TextWidget(
-        label: "title",
+        label:  "Title",
 
       ),automaticallyImplyLeading: true,),
       body: SingleChildScrollView(
